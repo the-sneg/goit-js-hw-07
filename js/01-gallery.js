@@ -53,9 +53,14 @@ function onEscapeClose(instance) {
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         instance.close();
+        removeListener();
       }
     });
   }
+}
+
+function removeListener() {
+  window.removeEventListener("keydown", onEscapeClose);
 }
 
 console.log(galleryItems);
